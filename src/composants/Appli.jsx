@@ -1,15 +1,49 @@
 import './Appli.scss';
+import React from 'react';
 import Entete from './Entete';
 import ListeDossiers from './ListeDossiers';
+import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 import Accueil from './Accueil';
 import { useEffect, useState } from 'react';
 import AjouterDossier from './AjouterDossier';
 import * as crudDossiers from '../services/crud-dossiers';
 import * as crudUtilisateurs from '../services/crud-utilisateurs';
 
+const useStyles = makeStyles((theme) => ({
+  button: {
+    display: 'block',
+    marginTop: theme.spacing(2),
+  },
+  formControl: {
+    margin: theme.spacing(3),
+    minWidth: 200,
+  },
+}));
+
 export default function Appli() {
+
+  const classes = useStyles();
+  const [tri, setTri] = React.useState('');
+  const [open, setOpen] = React.useState(false);
+
+  const gererChange = (event) => {
+    setTri(event.target.value);
+  };
+
+  const gererClose = () => {
+    setOpen(false);
+  };
+
+  const gererOpen = () => {
+    setOpen(true);
+  };
+
   // État de l'utilisateur (pas connecté = null / connecté = objet FB-Auth spécial)
   const [utilisateur, setUtilisateur] = useState(null);
 
@@ -57,6 +91,24 @@ export default function Appli() {
           <>
             <Entete utilisateur={utilisateur} />
             <section className="contenu-principal">
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-controlled-open-select-label">Tri des dossiers</InputLabel>
+              <Select
+                labelId="demo-controlled-open-select-label"
+                id="demo-controlled-open-select"
+                open={open}
+                onClose={gererClose}
+                onOpen={gererOpen}
+                value={tri}
+                onChange={gererChange}
+              >
+                <MenuItem value="">
+                  <em>Date de modification descendant</em>
+                </MenuItem>
+                <MenuItem value={"a-z"}>Nom de dossier ascendant</MenuItem>
+                <MenuItem value={"z-a"}>Nom de dossier descendant</MenuItem>
+              </Select>
+            </FormControl>
               <ListeDossiers utilisateur={utilisateur} etatDossiers={etatDossiers} />
               <AjouterDossier ouvert={ouvertAD} setOuvert={setOuvertAD} gererAjout={gererAjouter} />
               <Fab onClick={() => setOuvertAD(true)} className="ajoutRessource" color="primary" aria-label="Ajouter dossier">
