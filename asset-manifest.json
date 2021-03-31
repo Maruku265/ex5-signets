@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/ex4-signets/static/css/main.635ed7df.chunk.css",
-    "main.js": "/ex4-signets/static/js/main.a6380ec7.chunk.js",
-    "runtime-main.js": "/ex4-signets/static/js/runtime-main.e43da3ac.js",
-    "static/css/2.6da788ff.chunk.css": "/ex4-signets/static/css/2.6da788ff.chunk.css",
-    "static/js/2.bafe2e9b.chunk.js": "/ex4-signets/static/js/2.bafe2e9b.chunk.js",
-    "index.html": "/ex4-signets/index.html",
-    "static/js/2.bafe2e9b.chunk.js.LICENSE.txt": "/ex4-signets/static/js/2.bafe2e9b.chunk.js.LICENSE.txt",
-    "static/media/couverture.2dc9ece9.webp": "/ex4-signets/static/media/couverture.2dc9ece9.webp"
+    "main.css": "/ex5-signets/static/css/main.635ed7df.chunk.css",
+    "main.js": "/ex5-signets/static/js/main.a6380ec7.chunk.js",
+    "runtime-main.js": "/ex5-signets/static/js/runtime-main.4c512b41.js",
+    "static/css/2.6da788ff.chunk.css": "/ex5-signets/static/css/2.6da788ff.chunk.css",
+    "static/js/2.bd47edc8.chunk.js": "/ex5-signets/static/js/2.bd47edc8.chunk.js",
+    "index.html": "/ex5-signets/index.html",
+    "static/js/2.bd47edc8.chunk.js.LICENSE.txt": "/ex5-signets/static/js/2.bd47edc8.chunk.js.LICENSE.txt",
+    "static/media/couverture.2dc9ece9.webp": "/ex5-signets/static/media/couverture.2dc9ece9.webp"
   },
   "entrypoints": [
-    "static/js/runtime-main.e43da3ac.js",
+    "static/js/runtime-main.4c512b41.js",
     "static/css/2.6da788ff.chunk.css",
-    "static/js/2.bafe2e9b.chunk.js",
+    "static/js/2.bd47edc8.chunk.js",
     "static/css/main.635ed7df.chunk.css",
     "static/js/main.a6380ec7.chunk.js"
   ]
